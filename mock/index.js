@@ -7,7 +7,7 @@ const responseFake = (url, type, respond) => {
     url: new RegExp(`/mock${url}`),
     type: type || 'get',
     response (req, res) {
-      res.join(Mock.mock(respond instanceof Function ? respond(req, res) : respond))
+      res.json(Mock.mock(respond instanceof Function ? respond(req, res) : respond))
     }
   }
 }
